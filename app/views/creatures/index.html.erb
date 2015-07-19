@@ -1,0 +1,23 @@
+<div class='row'>
+
+  <div class='col-md-8 col-md-offset-2'>
+
+  <h4>Records To Date:</h4>
+
+  <% @creatures.each do |creature| %>
+
+  <div class="well">
+    <p><%= creature.name %></p>
+    <p><%= creature.description %></p>
+    <%= link_to "Record", creature  %>
+    <%= link_to "", edit_creature_path(creature), class: 'btn btn-primary btn-xs glyphicon glyphicon-pencil pull-right' %>
+    <%= link_to "", creature, method: :delete, class: 'btn btn-danger btn-xs glyphicon glyphicon-trash pull-right' %>
+  </div>
+
+<% end %>
+
+  </div>
+
+</div>
+
+

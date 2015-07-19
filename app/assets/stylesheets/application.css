@@ -1,3 +1,11 @@
+/*body{
+  background-image: url(http://i1138.photobucket.com/albums/n538/GraemeDewar/Beinn%20Udlaidh%20and%20Beinn%20Bhreac%20Liath/IMG_0715.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+}*/
+
+*= require bootstrap_form
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
