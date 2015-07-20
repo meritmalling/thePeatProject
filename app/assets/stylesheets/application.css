@@ -1,9 +1,9 @@
-/*body{
-  background-image: url(http://i1138.photobucket.com/albums/n538/GraemeDewar/Beinn%20Udlaidh%20and%20Beinn%20Bhreac%20Liath/IMG_0715.jpg);
-  background-repeat: no-repeat;
-  background-position: center top;
-}*/
-
+.founders img{
+  margin-top: 50px;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+}
 *= require bootstrap_form
 
 /*

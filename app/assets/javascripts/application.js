@@ -1,3 +1,14 @@
+$(function(){
+  $('.jcarousel').jcarousel({
+      animation: {
+          duration: 800,
+          easing:   'linear',
+          complete: function() {
+          }
+      }
+  });
+});
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -12,5 +23,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require plugin #<– jcarousel.js
 //= require turbolinks
 //= require_tree .

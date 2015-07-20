@@ -4,10 +4,6 @@ class CreaturesController < ApplicationController
     @creatures = Creature.all
   end
 
-  def show
-    @creature = Creature.find params[:id]
-  end
-
   def new
     @creature = Creature.new
   end
@@ -17,18 +13,22 @@ class CreaturesController < ApplicationController
     redirect_to creatures_path
   end
 
+  def destroy
+    Creature.find(params[:id]).delete
+    redirect_to creatures_path
+  end
+
   def edit
     @creature = Creature.find params[:id]
   end
 
-  def update
-    c = Creature.find params[:id]
-    c.update creature_params
-    redirect_to creatures_path
+  def show
+      @creature = Creature.find params[:id]
   end
 
-  def destroy
-    Creature.find(params[:id]).delete
+  def update
+    entry = Creature.find params[:id]
+    entry.update creature_params
     redirect_to creatures_path
   end
 
