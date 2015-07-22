@@ -4,6 +4,7 @@
 <%= bootstrap_form_for @creature do |record| %>
 <%= record.text_field :name %>
 <%= record.text_field :description %>
+<%= record.collection_check_boxes :tag_ids, @tags, :id, :name%>
 <%= record.primary %>
 <% end %>
 

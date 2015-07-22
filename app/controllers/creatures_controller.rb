@@ -6,20 +6,24 @@ class CreaturesController < ApplicationController
 
   def new
     @creature = Creature.new
+    @tags = Tag.all
   end
 
   def create
-    Creature.create creature_params
+    c = Creature.create(creature_params)
+    update_tags c
     redirect_to creatures_path
   end
 
   def destroy
-    Creature.find(params[:id]).delete
+    @c = Creature.find(params[:id])
+    @c.destroy
     redirect_to creatures_path
   end
 
   def edit
     @creature = Creature.find params[:id]
+    @tags = Tag.all
   end
 
   def show
@@ -27,12 +31,23 @@ class CreaturesController < ApplicationController
   end
 
   def update
-    entry = Creature.find params[:id]
-    entry.update creature_params
-    redirect_to creatures_path
+    c = Creature.find params[:id]
+    c.update creature_params
+    c.tags.clear
+    update_tags c
+    redirect_to c
   end
 
   private
+
+  def update_tags creature
+    creature_tags = params[:creature][:tag_ids]
+    creature_tags.each do |id|
+      creature.tags << Tag.find(id) unless id.blank?
+    end
+  end
+
+
 
   def creature_params
     params.require(:creature).permit(:name,:description)
