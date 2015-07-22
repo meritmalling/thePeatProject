@@ -27,7 +27,7 @@ class CreaturesController < ApplicationController
   end
 
   def show
-      @creature = Creature.find params[:id]
+    @creature = Creature.find params[:id]
   end
 
   def update

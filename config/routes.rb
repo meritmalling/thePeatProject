@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'creatures' => 'creatures#index'
 
   resources :creatures
-
+  resources :tags
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,11 +1,3 @@
-.founders img{
-  margin-top: 50px;
-  border-radius: 50%;
-  height: 150px;
-  width: 150px;
-}
-*= require bootstrap_form
-
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

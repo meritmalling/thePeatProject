@@ -1,0 +1,25 @@
+<div class='row'>
+
+  <div class='col-md-8 col-md-offset-2'>
+
+  <h4>Current Tags:</h4>
+
+  <% flash.each do |k,v| %>
+  <div class="alert alert-<%= k %>">
+    <%= v %>
+  </div>
+<% end %>
+
+  <% @tags.each do |t| %>
+
+  <div class="well">
+    <%= t.name %>
+    <%= link_to "", edit_tag_path(t), class: 'btn btn-xs btn-primary glyphicon glyphicon-pencil pull-right' %>
+    <%= link_to "", t, method: :delete, class: 'btn btn-xs btn-danger glyphicon glyphicon-trash pull-right' %>
+  </div>
+
+<% end %>
+
+  </div>
+
+</div>

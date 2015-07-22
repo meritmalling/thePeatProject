@@ -4,9 +4,13 @@
 <%= link_to "&larr; back".html_safe, creatures_path %>
 
 <div class="well">
-  <p><%= @creature.name %></p>
-  <p><%= @creature.description %></p>
-  <p>Logged At: <%= @creature.created_at %></p>
+    <h4><%= @creature.name %></h4>
+    <p>Description: <%= @creature.description %></p>
+
+    <%= link_to "", edit_creature_path(@creature), class: 'btn glyphicon glyphicon-pencil pull-right' %>
+    <%= link_to "", @creature, method: :delete, class: 'btn btn-danger btn-xs glyphicon glyphicon-trash pull-right' %>
+    <p> Tags: <% @creature.tags.each do |tag| %> <%= link_to tag.name, tag %><% end %></p>
+    <p>Logged At: <%= @creature.created_at %></p>
 </div>
 
   </div>

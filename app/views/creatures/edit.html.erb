@@ -1,10 +1,9 @@
 <div class='row'>
-
   <div class='col-md-8 col-md-offset-2'><h3>Edit Creature Record</h3>
 
 <%= bootstrap_form_for @creature do |record| %>
-<%= record.text_area :name %>
-<%= record.text_area :description %>
+<%= record.text_field :name %>
+<%= record.text_field :description %>
 <%= record.collection_check_boxes :tag_ids, @tags, :id, :name %>
 <%= record.primary %>
 <% end %>

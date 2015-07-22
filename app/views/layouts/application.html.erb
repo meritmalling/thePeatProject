@@ -12,13 +12,16 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
 
 <div class='row'>
   <div class='col-md-8 col-md-offset-2'>
   <%= link_to "Home",root_path %> |
   <%= link_to "Project Records",creatures_path %> |
-  <%= link_to "Record Findings",new_creature_path %>
+  <%= link_to "Record Findings",new_creature_path %> |
+  <%= link_to "Add Tag",new_tag_path %> |
+  <%= link_to "Tags",tags_path %>
 
   <h1> The Peat Project </h1>
   <p>The Peat Project is a community effort to explore our nearby peat bogs and make a record

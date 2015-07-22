@@ -7,13 +7,14 @@
   <% @creatures.each do |c| %>
 
   <div class="well">
-    <p><%= c.name %></p>
-    <p><%= c.description %></p>
+    <h4><%= c.name %></h4>
+    <p>Description: <%= c.description %></p>
 
-    <%= link_to "Record", c  %>
-    <%= link_to "", edit_creature_path(c), class: 'btn glyphicon glyphicon-pencil pull-right' %>
+    <%= link_to "", edit_creature_path(c), class: 'btn btn-xs btn-primary glyphicon glyphicon-pencil pull-right' %>
     <%= link_to "", c, method: :delete, class: 'btn btn-danger btn-xs glyphicon glyphicon-trash pull-right' %>
 
+    <p> Tags: <% c.tags.each do |tag| %> <%= link_to tag.name, tag %><% end %></p>
+    <%= link_to "Full Record", c %>
   </div>
 
 <% end %>
